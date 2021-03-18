@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true">
+
+        <Button
+            android:id="@+id/go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go"
+            android:onClick="onGoClick"/>
+        <EditText
+            android:id="@+id/Token"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Token"
+            android:layout_toRightOf="@+id/go"
+            android:maxWidth="100dp"
+            android:maxHeight="100dp"/>
+        <EditText
+            android:id="@+id/playlistId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Playlist ID"
+            android:layout_toRightOf="@+id/Token"
+            android:maxWidth="100dp"
+            android:maxHeight="100dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp">
+        <TextView
+            android:id="@+id/acousticness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Acousticness - " />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valence - "
+            android:layout_below="@+id/acousticness"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
