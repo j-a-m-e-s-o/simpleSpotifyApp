@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 while (i<trackPager.items.size()){
                     kaaes.spotify.webapi.android.models.Track item = trackPager.items.get(i);
                     String trackId = item.id;
-                    //System.out.println(item.name);
+                    System.out.println(item.name);//
                     int finalI = i;
                     spotify.getTrackAudioFeatures(trackId, new Callback<AudioFeaturesTrack>() {
                         @Override
