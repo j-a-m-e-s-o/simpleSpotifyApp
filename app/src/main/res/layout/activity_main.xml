@@ -34,6 +34,14 @@
             android:layout_toRightOf="@+id/Token"
             android:maxWidth="100dp"
             android:maxHeight="100dp"/>
+        <EditText
+            android:id="@+id/userId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="User ID"
+            android:layout_toRightOf="@+id/playlistId"
+            android:maxWidth="100dp"
+            android:maxHeight="100dp"/>
     </RelativeLayout>
 
     <RelativeLayout
