@@ -25,6 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import java.net.HttpURLConnection;
+
 import static com.example.simplespotifyapp.FindMeans.findMeanOfFloatArrayList;
 
 
@@ -47,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(tokenId);
         String playlistId = playlist.getText().toString();
         String userId = user.getText().toString();
+
+        //create a client
+        OkHttpClient client = new OkHttpClient();
+
+
         SpotifyApi api = new SpotifyApi();
 
 // Most (but not all) of the Spotify Web API endpoints require authorisation.
