@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         OkHttpClient client = new OkHttpClient();
 
-        String url = "https://reqres.in/api/users?page=2";
+        String url = "https://accounts.spotify.com/authorize";
 
         Request request = new Request.Builder()
                 .url(url)
