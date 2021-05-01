@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.spotify.android.appremote.api.ConnectionParams;
 import com.spotify.android.appremote.api.Connector;
@@ -17,10 +18,15 @@ import kaaes.spotify.webapi.android.models.AudioFeaturesTrack;
 import kaaes.spotify.webapi.android.models.Pager;
 import kaaes.spotify.webapi.android.models.PlaylistTrack;
 import kaaes.spotify.webapi.android.models.Track;
+import okhttp3.Call;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.ResponseBody;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -31,6 +37,9 @@ import static com.example.simplespotifyapp.FindMeans.findMeanOfFloatArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
+    //http request test
+    private TextView httptest;
+    //httpEnd
     static boolean getStuff = true;
     private static final String CLIENT_ID = "7406a90fa7c24810a377cccb6bf542fc";
     private static final String REDIRECT_URI = "http://localhost/";
@@ -50,8 +59,39 @@ public class MainActivity extends AppCompatActivity {
         String playlistId = playlist.getText().toString();
         String userId = user.getText().toString();
 
-        //create a client
-        //OkHttpClient client = new OkHttpClient();
+        //http request test
+        httptest = findViewById(R.id.httpplaceholder);
+
+        OkHttpClient client = new OkHttpClient();
+
+        String url = "https://reqres.in/api/users?page=2";
+
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+
+        client.newCall(request).enqueue(new okhttp3.Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, okhttp3.Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    String myResponse = response.body().string();
+
+                    MainActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            httptest.setText(myResponse);
+                        }
+                    });
+                }
+            }
+        });
+        //httpEnd
+
 
 
         SpotifyApi api = new SpotifyApi();

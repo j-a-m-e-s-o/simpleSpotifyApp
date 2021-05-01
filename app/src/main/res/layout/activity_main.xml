@@ -55,10 +55,18 @@
             android:layout_height="wrap_content"
             android:text="Acousticness - " />
         <TextView
+            android:id="@+id/valence"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Valence - "
             android:layout_below="@+id/acousticness"/>
+
+        <TextView
+            android:id="@+id/httpplaceholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="placeholder"
+            android:layout_below="@+id/valence"/>
 
     </RelativeLayout>
 
