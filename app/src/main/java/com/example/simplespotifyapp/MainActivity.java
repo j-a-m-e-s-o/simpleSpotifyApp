@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         String userId = user.getText().toString();
 
         //create a client
-        OkHttpClient client = new OkHttpClient();
+        //OkHttpClient client = new OkHttpClient();
 
 
         SpotifyApi api = new SpotifyApi();
