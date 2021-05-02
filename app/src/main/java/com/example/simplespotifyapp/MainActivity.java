@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         OkHttpClient client = new OkHttpClient();
 
-        String url = "https://accounts.spotify.com/authorize?client_id=7406a90fa7c24810a377cccb6bf542fc&response_type=code&redirect_uri=https%3A%2F%2Fj-a-m-e-s.neocities.org%2Fcallback%2F";
+        String url = "https://accounts.spotify.com/authorize?client_id=7406a90fa7c24810a377cccb6bf542fc&response_type=code&redirect_uri=http://localhost/&scope=user-read-private%20user-read-email";
 
         Request request = new Request.Builder()
                 .url(url)
@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call call, okhttp3.Response response) throws IOException {
+                System.out.println("Response Received");
                 if (response.isSuccessful()) {
                     String myResponse = response.body().string();
 

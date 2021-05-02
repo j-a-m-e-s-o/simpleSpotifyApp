@@ -61,7 +61,7 @@
             android:text="Valence - "
             android:layout_below="@+id/acousticness"/>
 
-        <TextView
+        <EditText
             android:id="@+id/httpplaceholder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
