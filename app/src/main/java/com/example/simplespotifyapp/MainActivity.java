@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         OkHttpClient client = new OkHttpClient();
 
-        String url = "https://accounts.spotify.com/authorize";
+        String url = "https://accounts.spotify.com/authorize?client_id=7406a90fa7c24810a377cccb6bf542fc&response_type=code&redirect_uri=http://localhost:8888/callback/";
 
         Request request = new Request.Builder()
                 .url(url)
